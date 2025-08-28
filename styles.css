@@ -1,0 +1,117 @@
+/* ===============================
+   Efe Bülbül — CV (styles.css)
+   Tema: Light/Dark + cam efekt
+   =============================== */
+
+   :root { color-scheme: light dark; }
+
+   /* LIGHT THEME (varsayılan) */
+   :root[data-theme="light"]{
+     --bg:#f7f9f8;
+     --text:#0b0e0d;
+     --accent:#005f3b;
+   
+     --border:rgba(11,14,13,.12);
+     --card:#ffffff;
+     --muted:rgba(11,14,13,.55);
+     --glass:rgba(255,255,255,.7);
+   }
+   
+   /* DARK THEME (mevcut görünüm) */
+   :root[data-theme="dark"]{
+     --bg:#0a0d0c;
+     --text:#e9eceb;
+     --accent:#005f3b;
+   
+     --border:rgba(233,236,235,.12);
+     --card:rgba(255,255,255,.02);
+     --muted:rgba(233,236,235,.7);
+     --glass:rgba(10,13,12,.7);
+   }
+   
+   /* Reset & tipografi */
+   *{box-sizing:border-box}
+   html,body{height:100%}
+   body{
+     margin:0;
+     font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+     line-height:1.6;
+     background:var(--bg);
+     color:var(--text);
+   }
+   
+   /* Akıcı geçişler */
+   @media (prefers-reduced-motion:no-preference){
+     body,.card,.btn,.topbar,.brand{transition:background-color .25s,color .25s,border-color .25s}
+   }
+   
+   /* Konteyner */
+   .container{max-width:980px;margin:0 auto;padding:24px 16px}
+   
+   /* Topbar */
+   .topbar{
+     position:sticky;top:0;z-index:10;
+     display:flex;justify-content:space-between;align-items:center;
+     padding:12px 16px;
+     border-bottom:1px solid var(--border);
+     background:var(--glass);
+     backdrop-filter:saturate(160%) blur(6px);
+   }
+   .brand{
+     width:40px;height:40px;border:1px solid var(--border);
+     display:grid;place-items:center;border-radius:10px;font-weight:800;color:var(--text)
+   }
+   
+   /* Nav */
+   .nav{display:flex;gap:18px;align-items:center}
+   .nav a{color:var(--text);opacity:.7;text-decoration:none;font-weight:600}
+   .nav a:hover{opacity:1}
+   
+   /* Hero */
+   .hero{padding:28px 0 8px;border-bottom:1px solid var(--border)}
+   .hero h1{margin:0;font-size:clamp(28px,3vw,40px)}
+   .subtitle{margin:6px 0 14px;color:var(--muted)}
+   
+   /* Butonlar */
+   .btn{
+     display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+     padding:10px 14px;border:1px solid var(--border);
+     border-radius:10px;text-decoration:none;color:var(--text);
+     font-weight:700;background:transparent;cursor:pointer;
+   }
+   .btn:hover{border-color:var(--accent)}
+   .btn.ghost{opacity:.85}
+   
+   /* Kartlar */
+   .card{
+     border:1px solid var(--border);border-radius:14px;
+     padding:18px;margin:16px 0;background:var(--card)
+   }
+   .card h2{margin:0 0 10px;font-size:20px}
+   
+   /* Yetenek çubukları */
+   .skills{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+   .skill{display:grid;grid-template-columns:170px 1fr;align-items:center;gap:12px}
+   .skill span:first-child{font-weight:600}
+   .bar{height:10px;border-radius:999px;position:relative;background:rgba(127,127,127,.18);overflow:hidden}
+   .bar::after{content:"";position:absolute;inset:0;width:var(--level,50%);background:var(--accent)}
+   
+   /* Liste & grid */
+   .list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+   .list a{color:var(--text);text-decoration:none;border-bottom:1px dashed transparent}
+   .list a:hover{border-bottom-color:var(--accent)}
+   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+   .p{border:1px solid var(--border);border-radius:12px;padding:12px}
+   
+   /* Altbilgi */
+   .footer{max-width:980px;margin:0 auto;padding:22px 16px;opacity:.7;border-top:1px solid var(--border)}
+   
+   /* Odak görünürlüğü */
+   a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+   
+   /* Mobil */
+   @media (max-width:720px){.skill{grid-template-columns:1fr}.nav{gap:12px;flex-wrap:wrap}}
+   
+   /* Tema düğmesi */
+   #theme-toggle{cursor:pointer}
+   

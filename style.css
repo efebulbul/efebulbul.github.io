@@ -118,15 +118,21 @@ body {
 .logo-mark {
     width: 32px;
     height: 32px;
-    border-radius: 999px;
+    border-radius: 50%;
+    overflow: hidden;
     background: radial-gradient(circle at 30% 10%, #b176ff, var(--accent));
     display: inline-flex;
     align-items: center;
-    justify-content;
-    font-weight: 700;
-    font-size: 15px;
-    color: #fff;
+    justify-content: center;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.logo-mark img.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 .logo-text {
@@ -396,18 +402,24 @@ body {
 }
 
 .avatar-circle {
-    width: 72px;
-    height: 72px;
-    border-radius: 999px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
     background: radial-gradient(circle at 20% 0%, #f7e7ff, var(--accent));
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-weight: 700;
-    font-size: 26px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
     margin-bottom: 12px;
+}
+
+.avatar-circle img.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 .profile-card h2 {

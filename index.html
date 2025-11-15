@@ -1,177 +1,406 @@
-<!doctype html>
-<html lang="tr" data-theme="dark">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark">
-  <title>Efe Bülbül — CV</title>
-  <meta name="description" content="Minimal, profesyonel, koyu tema CV sitesi" />
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Boya öncesi tema uygulama (FOUC engelleme) -->
-  <script>
-  (() => {
-    const KEY = "site-theme";
-    try {
-      const t = localStorage.getItem(KEY);
-      if (t === "light" || t === "dark") {
-        document.documentElement.setAttribute("data-theme", t);
-        document.documentElement.style.colorScheme = t === "dark" ? "dark" : "light";
-      }
-    } catch(_) {}
-  })();
-  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efe Bülbül | iOS Developer & MIS Student</title>
+    <meta name="description" content="Efe Bülbül - iOS Developer, Management Information Systems student. CV, projeler ve iletişim." />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar" id="top">
-    <div class="brand">EB</div>
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-mark">EB</span>
+                <span class="logo-text">Efe Bülbül</span>
+            </div>
 
-    <nav class="nav">
-      <a href="#hakkimda">Hakkımda</a>
-      <a href="#deneyim">Deneyim</a>
-      <a href="#projeler">Projeler</a>
-      <a href="#egitim">Eğitim</a>
-      <a href="#yetenekler">Yetenekler</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
+            <nav class="nav">
+                <a href="#hero" class="nav-link">Ana Sayfa</a>
+                <a href="#about" class="nav-link">Hakkımda</a>
+                <a href="#skills" class="nav-link">Yetenekler</a>
+                <a href="#experience" class="nav-link">Deneyim</a>
+                <a href="#projects" class="nav-link">Projeler</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+            </nav>
 
-    <!-- Tema düğmesi -->
-    <button id="theme-toggle" aria-pressed="true" aria-label="Temayı değiştir" class="btn" title="Temayı değiştir">
-      <span class="theme-icon" aria-hidden="true">☀️</span>
-      <span class="theme-text">Light Mode</span>
-    </button>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Efe Bülbül</h1>
-      <p class="subtitle">YBS Öğrencisi · Frontend Developer &amp; iOS Developer</p>
-      <div class="cta">
-        <a class="btn" href="mailto:efebulbull@icloud.com">E-posta</a>
-        <a class="btn ghost" href="cv.pdf" download>PDF</a>
-      </div>
-    </section>
-
-    <section id="hakkimda" class="card">
-      <h2>Hakkımda</h2>
-      <p>Topkapı Üniversitesi YBS öğrencisi. Teknasyon şirketinde Frontend &amp; iOS Intern olarak çalışan.</p>
-    </section>
-
-    <section id="yetenekler" class="card">
-      <h2>Yetenekler</h2>
-      <ul class="skills">
-        <li class="skill"><span>PYTHON</span><span class="bar" style="--level:50%"></span></li>
-        <li class="skill"><span>HTML &amp; CSS</span><span class="bar" style="--level:85%"></span></li>
-        <li class="skill"><span>JAVASCRIPT</span><span class="bar" style="--level:55%"></span></li>
-        <li class="skill"><span>iOS SWİFT UI </span><span class="bar" style="--level:40%"></span></li>
-      </ul>
-    </section>
-
-    <section id="deneyim" class="card">
-      <h2>Deneyim</h2>
-      <article class="item">
-        <div class="meta">
-          <h3>Öğrenci Projeleri · Takım Üyesi</h3>
-          <span>2025 — Güncel</span>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-button" aria-label="Tema değiştir">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+                <button id="mobile-menu-toggle" class="icon-button hamburger" aria-label="Menü aç/kapat">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <ul>
-          <li>Termal görüntüleme ile arama-kurtarma drone projesi (Hava Kurt).</li>
-          <li>Proje Yönetimi - Başkanlık</li>
-        </ul>
-      </article>
-      <article class="item">
-        <div class="meta">
-          <h3>Teknasyon - Frontend &amp; iOS Intern</h3>
-          <span>2025 - Güncel</span>
+
+        <nav class="nav nav-mobile" id="mobile-nav">
+            <a href="#hero" class="nav-link">Ana Sayfa</a>
+            <a href="#about" class="nav-link">Hakkımda</a>
+            <a href="#skills" class="nav-link">Yetenekler</a>
+            <a href="#experience" class="nav-link">Deneyim</a>
+            <a href="#projects" class="nav-link">Projeler</a>
+            <a href="#contact" class="nav-link">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="section hero">
+            <div class="container hero-grid reveal">
+                <div class="hero-text">
+                    <p class="eyebrow">iOS Developer • MIS Student</p>
+                    <h1>
+                        Merhaba, ben <span class="accent">Efe Bülbül</span>.<br />
+                        Ürün odaklı, temiz kod seven bir geliştiriciyim.
+                    </h1>
+                    <p class="hero-subtitle">
+                        İstanbul Topkapı Üniversitesi Yönetim Bilişim Sistemleri öğrencisiyim.
+                        iOS geliştirme, yapay zekâ ve yazılım projeleriyle gerçek problemler çözen ürünler
+                        üretmeye odaklanıyorum.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn primary">Benimle İletişime Geç</a>
+                        <a href="#projects" class="btn ghost">Projelerimi Gör</a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Lokasyon</span>
+                            <span class="meta-value">İstanbul, Türkiye</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Rol</span>
+                            <span class="meta-value">iOS Developer & MIS Student</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Odak</span>
+                            <span class="meta-value">Mobil Uygulamalar · AI · Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card reveal">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <div class="avatar-circle">EB</div>
+                        </div>
+                        <h2>Efe Bülbül</h2>
+                        <p class="profile-title">iOS Developer • MIS Student</p>
+                        <p class="profile-summary">
+                            Swift, UIKit ve modern mobil deneyimler üzerine çalışan; performans, tasarım ve
+                            kullanıcı odaklılık konusunda titiz bir geliştiriciyim.
+                        </p>
+                        <div class="profile-tags">
+                            <span class="tag">Swift</span>
+                            <span class="tag">UIKit</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Frontend</span>
+                        </div>
+                        <div class="profile-links">
+                            <a href="mailto:efebulbul@example.com" class="profile-link">Email</a>
+                            <a href="https://www.linkedin.com" target="_blank" class="profile-link">LinkedIn</a>
+                            <a href="https://github.com" target="_blank" class="profile-link">GitHub</a>
+                            <a href="https://efebulbul.com" target="_blank" class="profile-link">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Hakkımda</h2>
+                    <p>Profesyonel olarak kimim, nasıl çalışırım?</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Ben Efe, İstanbul Topkapı Üniversitesi’nde Yönetim Bilişim Sistemleri okuyan ve
+                            ağırlıklı olarak <strong>iOS geliştirme</strong> alanında ilerleyen bir yazılımcıyım.
+                        </p>
+                        <p>
+                            Kullanıcı deneyimini merkeze alan, performans ve okunabilir kodu önemseyen bir
+                            geliştiriciyim. Uygulamalarımda; temiz mimari yaklaşımlar, yeniden kullanılabilir
+                            komponentler ve ölçeklenebilir altyapılar kurmaya odaklanıyorum.
+                        </p>
+                        <p>
+                            Uzun vadede hedefim; mobil geliştirme, yapay zekâ ve veri odaklı sistemleri birleştirerek
+                            hem Türkiye’de hem de global ölçekte katma değer üreten ürünler geliştirmek.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <span class="highlight-label">Alanlar</span>
+                            <p class="highlight-value">iOS Development, UI/UX, REST API, Firebase, Frontend</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-label">Güçlü Yönler</span>
+                            <p class="highlight-value">Problem çözme, detaycılık, sorumluluk alma, sürekli öğrenme</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-label">Diller</span>
+                            <p class="highlight-value">Türkçe (Ana dil), İngilizce (iyi)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section section-alt">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Yetenekler</h2>
+                    <p>Teknik becerilerim ve güçlü olduğum alanlar.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-col">
+                        <h3>Mobil Geliştirme</h3>
+                        <ul class="skill-list">
+                            <li><span>Swift, UIKit</span><span class="skill-level">İleri</span></li>
+                            <li><span>Auto Layout, Programmatic UI</span><span class="skill-level">Orta</span></li>
+                            <li><span>MVVM, Delegate, NotificationCenter</span><span class="skill-level">Orta</span></li>
+                            <li><span>MapKit, CoreLocation</span><span class="skill-level">ileri</span></li>
+                        </ul>
+                    </div>
+                    <div class="skill-col">
+                        <h3>Backend & Veri</h3>
+                        <ul class="skill-list">
+                            <li><span>Firebase (Auth, Firestore, Storage)</span><span class="skill-level">Orta</span></li>
+                            <li><span>REST API entegrasyonları</span><span class="skill-level">Orta</span></li>
+                            <li><span>Temel SQL & NoSQL kavramları</span><span class="skill-level">Orta</span></li>
+                        </ul>
+                    </div>
+                    <div class="skill-col">
+                        <h3>Web & Diğer</h3>
+                        <ul class="skill-list">
+                            <li><span>HTML5, CSS3, JavaScript</span><span class="skill-level">İleri</span></li>
+                            <li><span>Git, GitHub, Xcode</span><span class="skill-level">İleri</span></li>
+                            <li><span>Figma ile basit UI tasarımı</span><span class="skill-level">Orta</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Deneyim</h2>
+                    <p>Profesyonel ve proje bazlı deneyimlerim.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>iOS Developer (Staj)</h3>
+                                <span class="timeline-company">Teknasyon – İstanbul</span>
+                            </div>
+                            <div class="timeline-meta">
+                                <span>2025 • Staj</span>
+                            </div>
+                            <ul>
+                                <li>Mevcut iOS uygulamalarında bug fix, feature geliştirme ve performans iyileştirmeleri yaptım.</li>
+                                <li>UIKit ile component bazlı tasarımlar, reusable view pattern’leri ve temiz kod pratikleri üzerinde çalıştım.</li>
+                                <li>Takım içinde code review süreçlerine dahil oldum, Git flow ve PR süreçlerine alıştım.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-badge"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Freelance iOS Geliştirici</h3>
+                                <span class="timeline-company">Bireysel</span>
+                            </div>
+                            <div class="timeline-meta">
+                                <span>2024 – Devam ediyor</span>
+                            </div>
+                            <ul>
+                                <li>App Store’da yayınlanan kişisel projeler geliştirdim (TasklyX, Trackly vb.).</li>
+                                <li>Kullanıcı dostu arayüzler, local notifications, premium özellik kurguları ve analitik entegrasyonları üzerinde çalıştım.</li>
+                                <li>Performans, hata yönetimi ve kullanıcı geri bildirimlerine göre iteratif geliştirme yaptım.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section section-alt">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Eğitim</h2>
+                    <p>Akademik geçmişim.</p>
+                </div>
+
+                <div class="education-grid">
+                    <article class="edu-card">
+                        <h3>İstanbul Topkapı Üniversitesi</h3>
+                        <p class="edu-program">Yönetim Bilişim Sistemleri (YBS)</p>
+                        <p class="edu-meta">Lisans • 2024 – Devam ediyor • İstanbul</p>
+                        <p>
+                            İşletme, bilişim sistemleri, veri ve yazılım geliştirme alanlarını birleştiren disiplinler arası bir eğitim alıyorum.
+                            Öğrendiklerimi aktif projelerde kullanarak teoriyi pratikle birleştirmeye odaklanıyorum.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Projeler</h2>
+                    <p>Gerçek kullanıcıya dokunan, üzerinde çalıştığım uygulamalar.</p>
+                </div>
+
+                <div class="projects-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="ios">iOS</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="other">Diğer</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-category="ios">
+                        <div class="project-chip">iOS • App Store</div>
+                        <h3>TasklyX – Akıllı Görev Yöneticisi</h3>
+                        <p>
+                            Görevleri kategori, emoji ve hatırlatıcılarla düzenleyen, minimal ve performanslı bir to-do uygulaması.
+                            Local notifications, Firebase senkronizasyonu ve çoklu tema desteği içeriyor.
+                        </p>
+                        <ul class="project-tech">
+                            <li>Swift</li>
+                            <li>UIKit</li>
+                            <li>Firebase</li>
+                            <li>Local Notifications</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/tr/app/tasklyx/id6754032288?l=tr" target="_blank">App Store</a>
+                            <a href="https://github.com/efebulbul/Taskly-1" target="_blank">GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="ios">
+                        <div class="project-chip">iOS • Devam</div>
+                        <h3>Trackly – Koşu & Aktivite Takibi</h3>
+                        <p>
+                            Koşu ve yürüyüşleri gerçek zamanlı izleyen, MapKit ile rota çizen, tempo, mesafe ve kalori takibi sunan bir fitness uygulaması.
+                        </p>
+                        <ul class="project-tech">
+                            <li>Swift</li>
+                            <li>UIKit</li>
+                            <li>MapKit</li>
+                            <li>CoreLocation</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Case Study</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="other">
+                        <div class="project-chip">Üniversite Projesi</div>
+                        <h3>Otonom Arama-Kurtarma Dron Projesi</h3>
+                        <p>
+                            Afet senaryolarında termal kamera ve görüntü işleme kullanarak kayıp kişileri tespit etmeyi hedefleyen bir drone projesi.
+                        </p>
+                        <ul class="project-tech">
+                            <li>Python</li>
+                            <li>Computer Vision</li>
+                            <li>Prototipleme</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card" data-category="web">
+                        <div class="project-chip">Web</div>
+                        <h3>Kişisel CV & Portfolio Sitesi</h3>
+                        <p>
+                            HTML, CSS ve JavaScript ile hazırlanan, profesyonel kimliğimi yansıtan, responsive ve performanslı bir kişisel web sitesi.
+                        </p>
+                        <ul class="project-tech">
+                            <li>HTML</li>
+                            <li>CSS (Flex/Grid)</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Canlı Demo</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-alt">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>İletişim</h2>
+                    <p>Proje, staj veya iş fırsatları için benimle iletişime geçebilirsiniz.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p>
+                            iOS geliştirme, ürün odaklı projeler, girişimcilik ve teknoloji tabanlı iş fikirleri üzerine
+                            konuşmak isterseniz bana e-posta gönderebilir veya LinkedIn üzerinden ulaşabilirsiniz.
+                        </p>
+                        <ul class="contact-list">
+                            <li><strong>Email:</strong> efebulbull@icloud.com</li>
+                            <li><strong>Lokasyon:</strong> İstanbul, Türkiye</li>
+                            <li><strong>LinkedIn:</strong> /efebulbul</li>
+                            <li><strong>GitHub:</strong> /efebulbul</li>
+                        </ul>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name">Ad Soyad</label>
+                                    <input type="text" id="name" name="name" required />
+                                </div>
+                                <div class="form-field">
+                                    <label for="email">E-posta</label>
+                                    <input type="email" id="email" name="email" required />
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="subject">Konu</label>
+                                <input type="text" id="subject" name="subject" required />
+                            </div>
+                            <div class="form-field">
+                                <label for="message">Mesaj</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary full-width">Mesajı Gönder</button>
+                            <p id="form-status" class="form-status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>© <span id="year"></span> Efe Bülbül. Tüm hakları saklıdır.</p>
+            <p class="footer-secondary">Bu site HTML, CSS ve JavaScript ile el yapımı olarak tasarlanmıştır.</p>
         </div>
-        <ul>
-          <li>Operasyon, iletişim ve takım çalışması.</li>
-          <li>HTML, CSS ve JavaScript ile responsive arayüzler geliştirme, mevcut projelerde iyileştirmeler.</li>
-          <li>Git ile takım ortamında versiyon kontrol deneyimi.</li>
-        </ul>
-      </article>
-    </section>
+    </footer>
 
-    <section id="projeler" class="card">
-      <h2>Projeler</h2>
-      <div class="grid">
-        <div class="p">
-          <h3>HAVA KURT</h3>
-          <p>İnsansız hava aracı üzerinden termal kamera ile hedef tespiti.</p>
-        </div>
-        <div class="p">
-          <h3>Drogheda United FC</h3>
-          <p>Futbol Kulübü resmi web sitesi hazırlama örneği. (İlk frontend projem)</p>
-        </div>
-        <div class="p">
-          <h3>Masal Adası</h3>
-          <p>Uyumakta zorlanan çocuklar için pek çok masalın bulunduğu bir MP3 masal sitesi.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="egitim" class="card">
-      <h2>Eğitim</h2>
-      <p>İstanbul Topkapı Üniversitesi — YBS (2024—2028)</p>
-      <p>İstanbul Üniversitesi — Bilgisayar Programcılığı (2023)</p>
-      <p>Seçili Sertifikalar: İstanbul Ü. — Temel Yapay Zeka, EDX Harvard — Python ile Makine Öğrenimi</p>
-    </section>
-
-    <section id="iletisim" class="card">
-      <h2>İletişim</h2>
-      <ul class="list">
-        <li><a href="mailto:efebulbull@icloud.com">efebulbull@icloud.com</a></li>
-        <li><a href="https://github.com/efebulbul" target="_blank" rel="noopener">GitHub</a></li>
-        <li>İstanbul, Türkiye</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="footer">
-    © 2025 Efe Bülbül
-  </footer>
-
-  <!-- Tercihen harici: <script src="theme.js" defer></script> -->
-  <script>
-  (function(){
-    const STORAGE_KEY = "site-theme"; // 'light' | 'dark'
-    const root = document.documentElement;
-
-    function getInitialTheme(){
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved === "light" || saved === "dark") return saved;
-      } catch(_) {}
-      // HTML başlangıçta dark ile geliyor; fallback:
-      return root.getAttribute("data-theme") === "light" ? "light" : "dark";
-    }
-
-    function applyTheme(theme){
-      root.setAttribute("data-theme", theme);
-      root.style.colorScheme = theme === "dark" ? "dark" : "light";
-
-      const btn = document.getElementById("theme-toggle");
-      if (!btn) return;
-      btn.setAttribute("aria-pressed", String(theme === "dark"));
-      const icon = btn.querySelector(".theme-icon");
-      const text = btn.querySelector(".theme-text");
-      if (icon) icon.textContent = theme === "dark" ? "☀️" : "🌙";
-      if (text) text.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
-    }
-
-    let current = getInitialTheme();
-    applyTheme(current);
-
-    // DOM hazır olduğunda butonu bağla (bu script sonda olduğu için zaten hazır)
-    const btn = document.getElementById("theme-toggle");
-    if (btn){
-      btn.addEventListener("click", () => {
-        current = current === "dark" ? "light" : "dark";
-        try { localStorage.setItem(STORAGE_KEY, current); } catch(_) {}
-        applyTheme(current);
-      });
-    }
-  })();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1266,3 +1266,16 @@ body {
         max-width: 100%;
     }
 }
+
+/* Force tech background overlay behavior on all screens */
+.tech-particles {
+    position: fixed !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+.tech-particles > * {
+    position: absolute !important;
+    display: block !important;
+}

@@ -87,24 +87,37 @@
     });
 })();
 
-// İletişim formu (dummy)
+// İletişim formu (Formspree)
 (function () {
     const form = document.getElementById("contact-form");
     const statusEl = document.getElementById("form-status");
 
     if (!form || !statusEl) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        statusEl.textContent = "Gönderiliyor...";
+
         const formData = new FormData(form);
-        const name = formData.get("name");
-        const subject = formData.get("subject");
 
-        // Buraya gerçek backend entegrasyonu (fetch) ekleyebilirsin.
-        statusEl.textContent = `Teşekkürler ${name}, mesajın (“${subject}”) alındı. En kısa sürede dönüş yapacağım.`;
+        try {
+            const response = await fetch("https://formspree.io/f/xvgjyodd", {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" },
+            });
 
-        form.reset();
+            if (response.ok) {
+                statusEl.textContent = "Mesajın başarıyla gönderildi! 📩";
+                form.reset();
+            } else {
+                statusEl.textContent = "Gönderimde bir sorun oluştu. Lütfen tekrar dene.";
+            }
+        } catch (err) {
+            console.error(err);
+            statusEl.textContent = "Bağlantı hatası. Lütfen tekrar dene.";
+        }
     });
 })();
 

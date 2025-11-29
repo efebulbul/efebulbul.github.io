@@ -3,8 +3,8 @@
     --bg-alt: #0a0a10;
     --text: #f5f5f7;
     --muted: #a0a0b5;
-    --accent: #602A80;
-    --accent-soft: rgba(96, 42, 128, 0.2);
+    --accent: #006BFF;
+    --accent-soft: rgba(0, 107, 255, 0.18);
     --border: #1c1c25;
     --card-bg: #11111a;
 
@@ -24,7 +24,7 @@
     --bg-alt: #ffffff;
     --text: #11111a;
     --muted: #55556a;
-    --accent-soft: rgba(96, 42, 128, 0.08);
+    --accent-soft: rgba(0, 107, 255, 0.10);
     --border: #d4d4e0;
     --card-bg: #ffffff;
     --shadow-soft: 0 10px 32px rgba(15, 15, 30, 0.12);
@@ -650,7 +650,7 @@ body {
 .meta-item {
     padding: 10px 12px;
     border-radius: var(--radius-md);
-    background: radial-gradient(circle at top left, rgba(96, 42, 128, 0.25), rgba(15, 15, 30, 0.9));
+    background: radial-gradient(circle at top left, rgba(0, 107, 255, 0.28), rgba(15, 15, 30, 0.9));
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -801,7 +801,7 @@ body {
     padding: 12px 14px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
-    background: radial-gradient(circle at top left, rgba(96, 42, 128, 0.18), rgba(10, 10, 20, 0.95));
+    background: radial-gradient(circle at top left, rgba(0, 107, 255, 0.22), rgba(10, 10, 20, 0.95));
 }
 
 [data-theme="light"] .highlight-card {
@@ -894,7 +894,7 @@ body {
     height: 12px;
     border-radius: 999px;
     background: var(--accent);
-    box-shadow: 0 0 0 5px rgba(96, 42, 128, 0.25);
+    box-shadow: 0 0 0 5px rgba(0, 107, 255, 0.28);
 }
 
 .timeline-content {

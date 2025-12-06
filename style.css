@@ -341,12 +341,11 @@ body {
     animation-delay: -3s;
 }
 
-/* Küçük ekranlarda arka plan logolarını kapat (performans için) */
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
     .tech-particles {
         display: none;
     }
-}
+} */
 
 /* Layout */
 
